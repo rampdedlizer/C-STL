@@ -70,6 +70,8 @@ int main()
 	
 }
 
+//Array of vectors
+
 void printvector(std::vector<int>&x)
 {
 	for(int i=0;i<x.size();i++)
