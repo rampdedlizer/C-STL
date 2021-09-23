@@ -69,3 +69,39 @@ int main()
 	printvector(v);
 	
 }
+
+void printvector(std::vector<int>&x)
+{
+	for(int i=0;i<x.size();i++)
+	{
+		std::cout<<x[i]<<" ";
+	}
+	std::cout<<""<<std::endl;
+}
+int main()
+{
+	int N;
+	
+	std::cout<<"Enter the number of vectors you want : ";
+	std::cin>>N;
+	
+	std::vector<int> v[N];
+	for(int i=0;i<N;i++)
+	{
+		int n;//inner sized
+		std::cin>>n;
+		for(int j=0;j<n;j++)
+		{
+			int x;
+			std::cin>>x;
+			v[i].push_back(x);
+		}
+	}
+	std::cout<<""<<std::endl;
+
+	for(int i=0;i<N;i++)
+	{
+		printvector(v[i]);
+	}
+	
+}
