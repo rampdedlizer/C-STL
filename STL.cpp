@@ -41,3 +41,31 @@ int main()
 	x:
 	printvector(v); 
 }
+
+
+//Vector of pairs
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+printvector(std::vector<std::pair<int,int> > &x)
+{
+	for(int i=0;i<x.size();i++)
+	{
+		std::cout<<x[i].first<<" "<<x[i].second<<std::endl;
+	}
+	std::cout<<"Size : "<<x.size()<<std::endl;
+}
+
+int main()
+{
+	vector<pair<int,int> > v;
+	for(int i=0;i<3;i++)
+	{
+		int x,y;
+		std::cin>>x>>y;
+		v.push_back({x,y});
+	}
+	
+	printvector(v);
+	
+}
