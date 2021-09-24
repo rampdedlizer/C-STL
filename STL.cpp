@@ -107,3 +107,58 @@ int main()
 	}
 	
 }
+
+
+//CodeWars Soln
+
+#include<bits/stdc++.h>
+#include<iostream>
+class StepInPrimes
+{
+public:
+static std::pair<long long, long long> step(int g, long long m, long long n)
+{
+	int z=0;
+	std::vector<int>a;
+	int f=0;
+	std::pair<long long, long long> v;
+	for(int i=m;i<=n;i++)
+	{
+		int sum=0;
+		for(int j=1;j<=i;j++)
+		{
+			if(i%j==0)
+				sum++;
+		}
+		if(sum==2)
+		{
+			a.push_back(i);
+			f++;
+		}
+	}
+	int k=0;
+	for(int i=0;i<f;i++)
+	{
+		for(int j=0;j<f;j++)
+		{
+			if((a[i]-a[j])==-g)
+				{
+					v.first=a[i];
+					v.second=a[j];
+					goto x;
+				}
+		}
+	}
+	if(k==0)
+		return{0,0};
+	x:
+	return v;
+}
+};
+int main()
+{
+	StepInPrimes a1;
+	std::pair<long long, long long> v=a1.step(11,30000,100000);
+	std::cout<<v.first<<" ";
+	std::cout<<v.second;
+}
