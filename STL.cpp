@@ -162,3 +162,34 @@ int main()
 	std::cout<<v.first<<" ";
 	std::cout<<v.second;
 }
+
+
+//
+
+#include <vector>
+
+using namespace std;
+
+class Dinglemouse
+{
+public:
+    static vector<int> sort( vector<int> &array)
+    {
+        
+        int size=array.size();
+        for(int i=0;i<size;i++)
+        {
+          
+          for(int j=(i+1);j<size;j++)
+          {
+            if(array[i]>array[j])
+              {
+                int t1=array[i];
+                array[i]=array[j];
+                array[j]=t1;
+              }
+          }
+        }
+      return array;
+    }
+};
