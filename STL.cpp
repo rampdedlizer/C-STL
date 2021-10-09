@@ -59,3 +59,40 @@ int main()
 {
     cout<<Bud::buddy(1071625, 1103735);
 }
+
+
+//Elements of row of triangle
+#include<iostream>
+#include<vector>
+
+std::vector<unsigned long long> odd_row(unsigned long long n)
+
+{
+    std::vector<unsigned long long> result;
+    
+    unsigned long long firstelement=((n*(n-1))+1);
+    
+    for(unsigned long long i=1;i<=n;i++)
+    {
+        result.push_back(firstelement);
+        firstelement=firstelement +2;
+    }
+    return result;
+}
+
+int main()
+{
+    std::string output;
+    std::vector<unsigned long long> result=odd_row(10);
+    
+    std::cin>>output;
+    std::cout<<output;
+
+    std::cout<<""<<std::endl;
+    std::cout<<""<<std::endl;
+    
+    for(auto value:result)
+    {
+        std::cout<<value <<" ";
+    }
+}
