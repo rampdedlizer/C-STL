@@ -96,3 +96,37 @@ int main()
         std::cout<<value <<" ";
     }
 }
+
+//Encryption
+#include<iostream>
+#include<string>
+using namespace std;
+std::string encrypt(std::string text, int n)
+{
+    if(n<=0||text.empty())
+      return text;
+    std::string resulteven;
+    std::string resultodd;
+    do
+    {
+      resultodd="";
+      resulteven="";
+      for(int i=0;i<text.length();i++)
+      {
+        if(i%2!=0)
+          resultodd=resultodd+text[i];
+        else
+          resulteven=resulteven+text[i];
+      }
+      text="";
+      text=(resultodd+resulteven);
+      n--;
+    }while(n!=0);
+    
+    return text;
+}
+
+int main()
+{
+  std::cout<<encrypt("32104",1);
+}
