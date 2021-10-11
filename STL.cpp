@@ -145,3 +145,29 @@ std::pair<std::size_t,std::size_t> two_sum(std::vector<int> numbers, int target)
   }   
   return{0,0};
 }
+
+//Is it in ?
+class WhichAreIn
+{
+
+  public:
+  static std::vector<std::string> inArray(std::vector<std::string> array1, std::vector<std::string> array2)
+  {
+    std::vector<std::string> result;
+  
+    for(auto value1:array1)
+    {
+      for(auto value2:array2)
+      {
+        if(value2.find(value1)!=std::string::npos)
+          {
+            result.push_back(value1);
+            break;
+          }
+
+      }
+    }
+    std::sort(result.begin(),result.end());
+    return result;
+  }  
+};
