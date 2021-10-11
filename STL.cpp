@@ -171,3 +171,35 @@ class WhichAreIn
     return result;
   }  
 };
+//Common Array Elements
+#include <vector>
+
+int common(std::vector<int> a, std::vector<int> b, std::vector<int> c)
+{
+  int total=0;
+  int check=0;
+  for(int i=0;i<a.size();i++)
+  {
+    check=0;
+    int sum=0;
+    for(int j=0;j<b.size();j++)
+    {
+      if(a[i]==b[j])
+      {
+        check++;
+        break;
+      }
+    }
+    for(int k=0;k<c.size();k++)
+    {
+      if(a[i]==c[k])
+      {
+        check++;
+        break;
+      }
+    }
+    if(check==2)
+      total=total+a[i];
+  }
+  return(total);
+}
