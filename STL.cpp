@@ -282,3 +282,27 @@ int solve(int a,int b)
 
   return total;
 }
+
+//Yalsumming
+#include<bits/stdc++.h>
+
+long long solve(long long n)
+{
+  std::map<int,int,std::greater<int>> stored;
+  int number=1;
+  int sum=0;
+  for(int i=1;i<=n;i++)
+  {
+    number=i;
+    sum=0;
+    do
+    {
+      sum=sum+(number%10);
+      number=number/10;
+    }while(number!=0);
+    stored[sum]=i;
+  }
+  
+  auto it=stored.begin();
+  return((*it).second);
+}
