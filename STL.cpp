@@ -227,3 +227,58 @@ std::vector<std::vector<int> > matrixAddition(std::vector<std::vector<int> > a,s
   std::cout<<"Size:"<<result.size()<<std::endl;
   return result;
 }
+
+
+//Prime goals
+#include<math.h>
+#include<iostream>
+
+bool boolprime(int value)
+{
+  int check=0;
+  for(int i=1;i<=value;i++)
+  {
+    if(value%i==0)
+      check++;
+  }
+  if(check==2)
+    return true;
+  else
+    return false;
+}
+
+int sumofdigits(int number)
+{
+  int summed=0;
+  int s=0;
+  do 
+  {
+    s=(number%10);
+    summed=summed+pow(s,2);
+    number=number/10;
+  }while(number!=0);
+  
+  return summed;
+}
+
+
+int solve(int a,int b)
+{
+  int number;
+  int total=0;
+  for(int i=a;i<=b;i++)
+  {
+      if(boolprime(i))
+      {
+          number=i;
+          do
+          {
+              number=sumofdigits(number);
+          }while(number>=10);
+          if(number==1){
+            total++;}
+      }
+  }
+
+  return total;
+}
