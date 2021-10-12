@@ -203,3 +203,27 @@ int common(std::vector<int> a, std::vector<int> b, std::vector<int> c)
   }
   return(total);
 }
+
+//Matrix addition
+std::vector<std::vector<int> > matrixAddition(std::vector<std::vector<int> > a,std::vector<std::vector<int> > b)
+{
+  const int size=a.size();
+  int copy=size;
+  int size1=copy;
+  std::vector<std::vector<int > > result;
+  for(int i=0;i<size;i++)
+  {
+    std::vector<int> temp;
+    
+    int j=0;
+    
+    do
+    {
+      temp.push_back(a[i][j]+b[i][j]);
+      j++;
+    }while(j!=(size));
+    result.push_back(temp);
+  }
+  std::cout<<"Size:"<<result.size()<<std::endl;
+  return result;
+}
