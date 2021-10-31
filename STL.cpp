@@ -338,20 +338,25 @@ size_t duplicateCount(std::string in)
 }
 
 //Correct Walk
+#include<vector>
+
 bool isValidWalk(std::vector<char> walk)
 {
  int size=walk.size();
-int sum=0;
- //Precheck
+int sumx=0;
+int sumy=0;
  if(size==10){
  for(auto value:walk)
 {
-  if(value=='e' || value=='s')
-    sum=sum+-1;
-  if(value=='w' || value=='n')
-    sum=sum+1;
+  switch(value)
+    {
+      case 'n':sumx++; break;
+      case 's':sumx--; break;
+      case 'e':sumy++;break;
+      case 'w':sumy--;break;
+  }
 }
-if(sum==0)
+if(sumx==0 and sumy==0)
   return true;
 else
   return false;}
