@@ -306,3 +306,33 @@ long long solve(long long n)
   auto it=stored.begin();
   return((*it).second);
 }
+
+//Duplicates ?
+
+#include<bits/stdc++.h>
+
+size_t duplicateCount(std::string in)
+
+{
+  std::for_each(in.begin(), in.end(), [](char & c){
+    c = ::toupper(c);});
+
+  std::map<char,int> checks;
+  std::vector<char> values;
+  for(auto value:in)
+  {
+    values.push_back(value);
+  }
+  
+  for(int i=0;i<values.size();i++)
+  {
+    checks[values[i]]=checks[values[i]]+1;
+  }
+  size_t count=0;
+  for(auto it=checks.begin();it!=checks.end();it++)
+  {
+    if((*it).second>1)
+      count++;    
+  }
+  return count;
+}
