@@ -363,3 +363,21 @@ else
 else
   return false;
 }
+
+//Jospehus Prime  --- extracted from various websites
+
+std::vector <int> josephus(std::vector < int > items, int k)
+{
+  std::vector<int> result;
+  int count=items.size();
+  
+    int i=0;
+  
+  for(int x=0;x<count;x++)
+  {
+    i=(i+k-1)%items.size();
+    result.push_back(items[i]);
+    items.erase(items.begin()+i);
+  }
+  return result;
+}
