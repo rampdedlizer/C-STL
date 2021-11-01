@@ -381,3 +381,25 @@ std::vector <int> josephus(std::vector < int > items, int k)
   }
   return result;
 }
+
+//Perimeter of Squares
+
+typedef unsigned long long ull;
+
+class SumFct
+{
+  public:
+  static ull perimeter(int n)
+  {
+      std::vector<ull> finale;
+      std::vector<ull> res={1,1};
+      for(ull i=0;i<=(ull)(n);i++)
+      {
+        if(i==0||i==1)
+          finale.push_back(res[i]);
+        else
+          finale.push_back(finale[i-1]+finale[i-2]);
+      }
+      return(accumulate(finale.begin(),finale.end(),0)*4);
+  }
+};
